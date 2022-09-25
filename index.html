@@ -1,0 +1,163 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Lab 3 | CSS Grid</title>
+	<meta name="description" content="A CSS Grid challenge to test your new layout skills">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/app.css">
+	<style>
+		/* Put styles for CSS Grid here for the Lab */
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+			font-family: "Roboto",sans-serif;
+			height: 100%;
+		}
+
+		div.container {
+			text-align: center;
+			height: 100%;
+			display: grid;
+			grid-template-columns: 20% 1fr 1fr 1fr 20%;
+			/* grid-template-rows: repeat(6,1fr) ; */
+
+			/* Definig grid template areas to align the grid cells according to given layout */
+			grid-template-areas:
+				"branding advertising1 advertising1 advertising1 search"
+				"branding globalnav globalnav globalnav globalnav"
+				"localnav topstory topstory topstory advertising2"
+				"localnav globalnews nationalnews localnews advertising2"
+				"localnav globalnews nationalnews localnews marketinfo"
+				"footer footer footer footer footer";
+
+
+			/* adjusting size of individual cells using grid-template-columns property */
+			grid-template-rows:
+				minmax(50px, auto) minmax(50px, auto) minmax(100px, auto) minmax(160px, auto) minmax(130px, auto) minmax(100px, auto);
+
+			/* adding column-gap and row-gap */
+			column-gap: 0.5em;
+			row-gap: 0.5rem;
+		}
+
+		div.item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* adding colours and adding grid-area for particular cells */
+		.item-a {
+			background-color: #fd6864;
+			grid-area: branding;
+		}
+
+		.item-b {
+			grid-area: globalnav;
+			background-color: #ffcc67;
+		}
+
+		.item-c {
+			background-color: #cbcefb;
+			grid-area: localnav
+		}
+
+		.item-d {
+			background-color: #fffc9e;
+			grid-area: footer;
+		}
+
+		.item-e {
+			grid-area: topstory;
+			background-color: #cd9934;
+		}
+
+		.item-f {
+			grid-area: globalnews;
+			background-color: #ffccc9;
+		}
+
+		.item-g {
+			grid-area: nationalnews;
+			background-color: #f8a102;
+		}
+
+		.item-h {
+			grid-area: localnews;
+			background-color: #68cbd0;
+		}
+
+		.item-i {
+			grid-area: search;
+			background-color: #dae8fc;
+		}
+
+		.item-j {
+			grid-area: marketinfo;
+			background-color: #999903;
+		}
+
+		.item-k {
+			grid-area: advertising1;
+			background-color: #9aff99;
+		}
+
+		.item-l {
+			grid-area: advertising2;
+			background-color: #32cb00;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="item item-a">
+			<h2>Branding</h2>
+		</div>
+		<div class="item item-b">
+			<h2>Global Nav</h2>
+		</div>
+		<div class="item item-c">
+			<h2>Local Nav</h2>
+		</div>
+		<div class="item item-d">
+			<h2>Footer</h2>
+		</div>
+		<div class="item item-e">
+			<h2>Top Story</h2>
+		</div>
+		<div class="item item-f">
+			<h2>Global News</h2>
+		</div>
+		<div class="item item-g">
+			<h2>National News</h2>
+		</div>
+		<div class="item item-h">
+			<h2>Local News</h2>
+		</div>
+		<div class="item item-i">
+			<h2>Search</h2>
+		</div>
+		<div class="item item-j">
+			<h2>Market Info</h2>
+		</div>
+		<div class="item item-k">
+			<h2>Advertising 1</h2>
+		</div>
+		<div class="item item-l">
+			<h2>Advertising 2</h2>
+		</div>
+	</div><!-- .container -->
+</body>
+
+</html>
